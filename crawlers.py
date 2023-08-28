@@ -17,9 +17,27 @@ class CrawlerTribunal():
             response = requests.get(new_url)
             content = response.content
             soup = BeautifulSoup(content, 'html.parser')
-            num_processo_el = soup.find('span', attrs={'id' : 'varaProcesso'})
-            num_processo = num_processo_el.text
-            print(num_processo)
+            vara_processo = (soup.find('span', attrs={'id' : 'varaProcesso'})).text
+            classe = (soup.find('span', attrs={'id' : 'classeProcesso'})).text
+            assunto = (soup.find('span', attrs={'id' : 'assuntoProcesso'})).text
+            area = (soup.find('div', attrs={'id' : 'areaProcesso'})).text
+            juiz = (soup.find('span', attrs={'id' : 'juizProcesso'})).text
+            data_distribuicao = (soup.find('div', attrs={'id' : 'dataHoraDistribuicaoProcesso'})).text
+            valor_acao = (soup.find('div', attrs={'id' : 'valorAcaoProcesso'})).text
+            partes_processo = (soup.find('table', attrs={'id' : 'tablePartesPrincipais'})).text
+
+            infos = { "numero_processo" : num, 
+                     "vara_processo" : vara_processo,
+                     "classe_processo" : classe,
+                     "assunto_processo" : assunto,
+                     "area_processo" : area,
+                     "juiz_processo": juiz,
+                     "data_distribuicao" : data_distribuicao,
+                     "valor_acao" : valor_acao,
+                     "partes_processo" : partes_processo,
+                     }
+
+            print(infos)
         except:
             raise
 
