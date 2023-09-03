@@ -5,9 +5,8 @@ import json
 
 
 class CrawlerTribunal():
-    def __init__(self, nome, url):
-        self.nome = nome
-        self.url = url
+    def __init__(self, sigla_tribunal):
+        self.sigla_tribunal = sigla_tribunal
 
     paths = [
             'classeProcesso',
@@ -22,17 +21,31 @@ class CrawlerTribunal():
     results = { '1grau' : {},
                '2grau': {},}
     
+    def get_url(self):
+        tribunal = self.sigla_tribunal
+        num_processo = '0051575-54.2021.8.06.0071'
+        placeholders = ['esaj', 'www2']
+        if tribunal == 'tjce':
+            base_url_1grau = f'https://{placeholders[0]}.{tribunal}.jus.br/cpopg/show.do?processo.codigo=&processo.foro={num_processo[-4:].lstrip("0")}&processo.numero={num_processo}'
+            base_url_2grau = f'https://{placeholders[0]}.{tribunal}.jus.br/cposg5/search.do?conversationId=&paginaConsulta=0&cbPesquisa=NUMPROC&numeroDigitoAnoUnificado={num_processo[:15]}&foroNumeroUnificado={num_processo[-4:]}&dePesquisaNuUnificado={num_processo}&dePesquisaNuUnificado=UNIFICADO&dePesquisa=&tipoNuProcesso=UNIFICADO'
+            return base_url_1grau, base_url_2grau
+        else:
+            base_url_1grau = f'https://{placeholders[1]}.{tribunal}.jus.br/cpopg/show.do?processo.codigo=&processo.foro=71&processo.numero='
+            base_url_2grau = 'y'
+            return base_url_1grau, base_url_2grau
+
+
     def get_num(self, num):
         pass
 
 
     def get_1grau(self, num):
-        base_url = self.url
-        url = f'{base_url}'
+        base_url_1grau, base_url_2grau = self.get_url()
         num_processo = num
-        new_url = url + num
+        url_1grau = base_url_1grau + num_processo
+        print(url_1grau)
         try:
-            response = requests.get(new_url)
+            response = requests.get(url_1grau)
             content = response.content
             soup = BeautifulSoup(content, 'html.parser')
 
@@ -46,14 +59,15 @@ class CrawlerTribunal():
                     resultados[path] = 'nao consta'
             
             self.results['1grau'] = resultados
-            # retty = json.dumps(self.results, indent=4)
-            return self.results
+            pretty = json.dumps(self.results, indent=4)
+            print(pretty)
+            # return self.results
 
         except:
             raise
     
     def check_2grau(self):
-        response = requests.get('https://esaj.tjce.jus.br/cposg5/search.do?conversationId=&paginaConsulta=0&cbPesquisa=NUMPROC&numeroDigitoAnoUnificado=0051575-54.2021&foroNumeroUnificado=0071&dePesquisaNuUnificado=0051575-54.2021.8.06.0071&dePesquisaNuUnificado=UNIFICADO&dePesquisa=&tipoNuProcesso=UNIFICADO')
+        response = requests.get(url)
         content = response.content
         soup = BeautifulSoup(content, 'html.parser')
         alert = soup.find('td', attrs={'role' : 'alert'})
@@ -95,12 +109,14 @@ class CrawlerTribunal():
             return
 
 
-    def collect_lawsuit(self):
-        self.get_1grau('0051575-54.2021.8.06.0071')
-        self.get_2grau()
+    def collect_lawsuit(self, num):
+        num_processo = num
+        self.get_1grau(num_processo)
+        self.get_2grau(num_processo)
         pretty = json.dumps(self.results, indent=4)
         print(pretty)
     
-
-crawler_tjce = CrawlerTribunal('tjce', 'https://esaj.tjce.jus.br/cpopg/show.do?processo.codigo=1Z0000ET90000&processo.foro=71&processo.numero=')
-crawler_tjce.collect_lawsuit()
+court_name = 'tjce'
+crawler_tjce = CrawlerTribunal('tjce')
+crawler_tjce.get_1grau('0051575-54.2021.8.06.0071')
+#crawler_tjce.collect_lawsuit()
