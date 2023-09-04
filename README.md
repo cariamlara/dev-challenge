@@ -40,6 +40,7 @@ Lista das movimentações (data e movimento)
 ```
 venv\Scripts\activate
 ```
+Se precisar desativar: ```\deativate```
 
 6. Instale as dependências
 
