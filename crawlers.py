@@ -38,7 +38,7 @@ class CrawlerTribunal():
                 element_table_parties = soup.find('table', attrs={'id' : path})
 
                 if element:
-                    resultados[path] = str(element.text.replace("\n", "").replace("\t", "").replace("\xa0", ""))
+                    resultados[path] = str(element.text.replace("\n", "").replace("\t", "").replace("\xa0", "").strip())
 
 
                 elif element_table_movimentacoes:
@@ -159,7 +159,7 @@ class CrawlerTribunal():
                 element_table_parties = soup.find('table', attrs={'id' : path})
 
                 if element:
-                    resultados[path] = str(element.text.replace("\n", "").replace("\t", "").replace("\xa0", ""))
+                    resultados[path] = str(element.text.replace("\n", "").replace("\t", "").replace("\xa0", "").strip())
 
                 elif element_table_movimentacoes:
                     table_movimentacoes = {}
