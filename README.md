@@ -53,7 +53,7 @@ _Utilizando o prompt de comando, abra a pasta do projeto e rode o seguinte coman
 python app.py
 ```
   
-![image](https://github.com/cariamlara/dev-challenge/assets/85589143/97093330-bfc0-4dce-bc80-289a79ab90a5)
+![image](https://github.com/cariamlara/dev-challenge/assets/85589143/9e560198-69ba-4d97-af9f-e7d8974e48b3)
 
 > **Se estiver tudo certo, a API deve estar pronta pra usar :)** 
 
@@ -62,7 +62,8 @@ python app.py
 2. Faça uma requisição PUT no endereço ```http://127.0.0.1:5000/processos``` passando um JSON no Body (raw) contendo o número do processo como parâmetro, dessa forma:
 ```{ "numero_processo" : "0170599-97.2018.8.06.0001" }```
 
-![image](https://github.com/cariamlara/dev-challenge/assets/85589143/6a48c94c-b6ae-406b-8eac-68ed27c53751)
+![image](https://github.com/cariamlara/dev-challenge/assets/85589143/90838a67-d724-4952-9b8b-e31bfd2bd9d9)
+
 
 _Alguns números que você pode utilizar:_
 - _0721604-73.2022.8.02.0001_
