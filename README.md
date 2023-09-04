@@ -40,7 +40,7 @@ Lista das movimentações (data e movimento)
 ```
 venv\Scripts\activate
 ```
-Se precisar desativar: ```\deativate```
+> Se precisar desativar: ```\deactivate```
 
 6. Instale as dependências
 
@@ -72,7 +72,11 @@ _Alguns números que você pode utilizar:_
 - _0710802-55.2018.8.02.0001_ 
 - _0170599-97.2018.8.06.0001_
 - _0113248-06.2017.8.06.0001_
-- _0026060-03.2010.8.06.0071_ 
+- _0026060-03.2010.8.06.0071_
+
+## Testes
+
+Implementei testes muito simples utilizandi pytest para conferir se algumas funções estavam retornando valores esperados. A partir dessa testagem, pude corrigir alguns problemas que não havia visto anteriormente no código, mas ainda há um bom caminho a se percorrer por aqui. Para rodar os testes, basta navegar até a pasta do projeto no Prompt de Comando e rodar: ```python -m pytest test_crawlers.py```
 
 # Considerações finais
 
