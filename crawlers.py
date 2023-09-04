@@ -310,7 +310,7 @@ class CrawlerTribunal():
             self.get_2grau_click(num)
             self.get_2grau_links(num)
         except:
-            self.results['2º grau' : 'Esse processo não foi encontrado em 2º grau.']
+            self.results['2º grau'] = 'Esse processo não foi encontrado em 2º grau.'
 
 
 # FUNÇÃO QUE BUSCA O PROCESSO EM TODOS OS GRAUS E COLETA AS INFORMAÇÕES
