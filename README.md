@@ -2,8 +2,10 @@
 Neste projeto eu construí um crawler que extrai informações sobre processos em 1º e 2º grau dos sites dos tribunais do Ceará e do Alagoas (TJCE e TJAL, respectivamente).
 
 ## Estrutura geral do projeto:
+
 - Arquivo principal da aplicação: ```app.py```
    - Aqui foi realizada a construção da API que receberá um JSON contendo o número do processo desejado e que fará a requisição aos crawlers;
+     
 - Arquivo secundário: ```crawlers.py```
    - Contém a classe construída para extrair as informações.
 
