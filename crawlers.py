@@ -1,8 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-import re
-import json
- 
 
 class CrawlerTribunal():
     def __init__(self, sigla_tribunal):
