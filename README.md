@@ -76,7 +76,7 @@ _Alguns números que você pode utilizar:_
 
 ## Testes
 
-Implementei testes muito simples utilizandi pytest para conferir se algumas funções estavam retornando valores esperados. A partir dessa testagem, pude corrigir alguns problemas que não havia visto anteriormente no código, mas ainda há um bom caminho a se percorrer por aqui. Para rodar os testes, basta navegar até a pasta do projeto no Prompt de Comando e rodar: ```python -m pytest test_crawlers.py```
+Implementei testes muito simples utilizando pytest para conferir se algumas funções estavam retornando valores esperados. A partir dessa testagem, pude corrigir alguns problemas que não havia visto anteriormente no código, mas ainda há um bom caminho a se percorrer por aqui. Para rodar os testes, basta navegar até a pasta do projeto no Prompt de Comando e rodar: ```python -m pytest test_crawlers.py```
 
 # Considerações finais
 
