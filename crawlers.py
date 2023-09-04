@@ -318,5 +318,7 @@ class CrawlerTribunal():
         num = num_processo
         infos_1grau = self.get_1degree(num)
         infos_2grau = self.get_infos_2degree(num)
-        return infos_1grau, infos_2grau
+        results = {'1º grau': infos_1grau, '2º grau': infos_2grau}
+    
+        return results
     
