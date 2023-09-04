@@ -4,17 +4,21 @@ import json
 
 app = Flask(__name__)
 
-crawler_tjal = CrawlerTribunal('tjal', "https://www2.tjal.jus.br/cpopg/show.do?processo.codigo=[0-9A-Z]{12}&processo.foro=1&processo.numero=")
-# crawler_tjal.get_url("0001557-39.2012.8.02.0044")
+crawler_tjce = CrawlerTribunal('tjce')
+crawler_tjal = CrawlerTribunal('tjal') 
 
 @app.route('/processos', methods=['PUT'])
-def get_num_proc():
-    num_proc_json = request.get_json()
-    num_proc = num_proc_json["num"]
-    resultado = crawler_tjal.get_url(str(num_proc))
-    return jsonify(resultado)
+def get_num_processo():
+    num_processo = request.get_json()
+    num = str(num_processo['numero_processo'])
+
+    if num[16:20] == '8.06':
+        resultado = crawler_tjce.collect_all_infos(num)
+        return jsonify(resultado)
+    elif num[16:20] == '8.02':
+        resultado = crawler_tjal.collect_all_infos(num)
+        return jsonify(resultado)
+    else:
+        return 'Esse processo não foi encontrado. Certifique-se de que está informando o número correto.'
 
 app.run()
-
-
-
