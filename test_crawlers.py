@@ -21,5 +21,6 @@ def test_check_2grau():
     
 def test_collect_all_infos():
     results = crawler_tjal.collect_all_infos('0721604-73.2022.8.02.0001')
+    results = crawler_tjce.collect_all_infos('0274857-22.2022.8.06.0001')
     assert isinstance(results, dict)
 
