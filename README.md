@@ -28,6 +28,7 @@ Lista das movimentações (data e movimento)
 - beautifulsoup4
 - requests
 - Postman (https://www.postman.com/downloads/)
+- pytest
 
 ## Instalação e execução
 > Estou utilizando o sistema operacional **Windows**
