@@ -74,6 +74,7 @@ _Alguns números que você pode utilizar:_
 # Considerações finais
 
 Gostei muito de realizar o desafio :D 
+
 Apesar de não ter sido simples, me diverti construindo o projeto. Essa é uma primeira versão dele, que acabou ficando bem simplezinha porque tentei construir algo minimamente funcional antes de começar a incrementar com outras coisas (como banco de dados, testes, etc -- ainda não sei fazer nada disso, preciso aprender).
 Mas pretendo continuar trabalhando nele pra construir algo mais robusto e organizado. Por enquanto vou ficar feliz que consegui fazer alguma coisa kkkk.
 
