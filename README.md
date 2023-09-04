@@ -78,7 +78,7 @@ Gostei muito de realizar o desafio :D
 Apesar de não ter sido simples, me diverti construindo o projeto. Essa é uma primeira versão dele, que acabou ficando bem simplezinha porque tentei construir algo minimamente funcional antes de começar a incrementar com outras coisas (como banco de dados, testes, etc -- ainda não sei fazer nada disso, preciso aprender).
 Mas pretendo continuar trabalhando nele pra construir algo mais robusto e organizado. Por enquanto vou ficar feliz que consegui fazer alguma coisa kkkk.
 
-Minha maior dificuldade foi na construção das URLs que servem de parâmetro para o requests, já que a consulta dos processos pode ser feita de várias formas diferentes, e cada forma gera um tipo de HTML diferente, e manipular isso foi a parte mais complicada. 
+Minha maior dificuldade foi na construção das URLs que servem de parâmetro para o requests, já que a consulta dos processos pode ser feita de várias formas diferentes, e cada forma gera um tipo de HTML diferente.
 Também tive algumas complicações em relação a formatação de texto. Se possível, adoraria receber um feedback com sugestões de melhorias e indicações do que aprender pra me aperfeiçoar.
 
 Obrigada pela oportunidade <3
