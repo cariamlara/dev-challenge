@@ -109,7 +109,7 @@ class CrawlerTribunal():
         infos = self.extract_info_1degree(url_1grau)
         return infos
 
-##########  SEGUNDO GRAU  ##########
+##########  SEGUNDO GRAU  ###########
 
 # FUNÇÃO PARA CHECAR SE O PROCESSO EXISTE EM 2º GRAU
 
