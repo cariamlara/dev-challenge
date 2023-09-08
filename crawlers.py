@@ -20,7 +20,7 @@ class CrawlerTribunal():
     
 ##########  PRIMEIRO GRAU  ##########
 
-# FUNÇÃO PARA EXTRAIR INFORMAÇÕES DO SEGUNDO GRAU
+# FUNÇÃO PARA EXTRAIR INFORMAÇÕES DO 1º GRAU
 
     def extract_info_1degree(self, url):
         response = requests.get(url)
@@ -109,9 +109,9 @@ class CrawlerTribunal():
         infos = self.extract_info_1degree(url_1grau)
         return infos
 
-##### SEGUNDO GRAU
+##########  SEGUNDO GRAU  ##########
 
-# FUNÇÃO PARA CHECAR SE O PROCESSO EXISTE EM SEGUNDO GRAU
+# FUNÇÃO PARA CHECAR SE O PROCESSO EXISTE EM 2º GRAU
 
     def check_2grau(self, numero_processo):
         num = numero_processo
@@ -142,7 +142,7 @@ class CrawlerTribunal():
             should_get_2grau = True
             return should_get_2grau
         
-# FUNÇÃO PARA EXTRAIR INFORMAÇÕES DO SEGUNDO GRAU
+# FUNÇÃO PARA EXTRAIR INFORMAÇÕES DO 2º GRAU
 
     def extract_info_2degree(self, url):
         response = requests.get(url)
